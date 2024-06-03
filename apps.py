@@ -1,6 +1,7 @@
 ''' This is a Pythorn + SQL code that can sort and check all the datas in the games.db database
 Made by Wilson Tong on the 22/05/24'''
 
+# Gains acess to Sql codes and data
 import sqlite3
 
 # Variable Declarations:
@@ -62,8 +63,9 @@ def Print_All_Data_Sorted_by_IGN_Rating():
         print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
     db.close
 
-
+#Main code
 while True:
+    #Asks what the user wants to do
     user_input=input(
     """What would you like to see from this games database?
     1.Show all data of the games
@@ -73,6 +75,7 @@ while True:
     5.Show all the data of the games ordered by IGN rating
     6.Exit
     """)
+    #prints the data the user wants
     if user_input=="1":
         Print_All_Data()
     elif user_input =="2":
