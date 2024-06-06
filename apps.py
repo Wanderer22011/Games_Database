@@ -7,18 +7,7 @@ import sqlite3
 # Variable Declarations:
 DATABASE="Game_Database.db"
 
-#Functions
-def Print_All_Data():
-    db=sqlite3.connect(DATABASE)
-    cursor=db.cursor()
-    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id;"
-    cursor.execute(sql)
-    results=cursor.fetchall()
-    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
-    for final in results:
-        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
-    db.close
-
+#Functions To Look At All The Games
 def Print_All_Games():
     db=sqlite3.connect(DATABASE)
     cursor=db.cursor()
@@ -30,6 +19,7 @@ def Print_All_Games():
         print(f"{final[0]:<10}{final[1]}")
     db.close
 
+#Functions To Order The Data
 def Print_All_Data_Sorted_by_Game_Name():
     db=sqlite3.connect(DATABASE)
     cursor=db.cursor()
@@ -85,6 +75,18 @@ def Print_All_Data_Sorted_by_Genre_Name():
         print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
     db.close
 
+#Functions To See The Different Tables
+def Print_All_Data():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id;"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
 def Print_All_Genres():
     db=sqlite3.connect(DATABASE)
     cursor=db.cursor()
@@ -107,10 +109,144 @@ def Print_All_Makers():
         print(f"{final[0]:<10}{final[1]}")
     db.close
 
+#Functions To Pick The Different Genres
 def Print_All_Data_Only_Genre_Sandbox():
     db=sqlite3.connect(DATABASE)
     cursor=db.cursor()
-    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genre.genre_name='Sandbox';"
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Sandbox';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Battle_Royale():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Battle royale';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_MOBA():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='MOBA';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_FPS():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='FPS';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Sports():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Sports';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Fighting():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Fighting';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_RPG():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='RPG';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Social_Simulation():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Social Simulation';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Action_Adventure():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Action-Adventure';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Genre_Party_game():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Genres.genre_name='Party Game';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+#Function To Pick The Different Maker
+def Print_All_Data_Only_Maker_Mojang_Studios():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Makers.maker_name='Mojang Studios';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Maker_Riot_Games():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Makers.maker_name='Riot Games';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Maker_Psyonix():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Makers.maker_name='Psyonix';"
     cursor.execute(sql)
     results=cursor.fetchall()
     print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
@@ -118,6 +254,7 @@ def Print_All_Data_Only_Genre_Sandbox():
         print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
     db.close
 #Main code
+
 while True:
     #Asks what the user wants to do
     user_input=input(
@@ -203,16 +340,85 @@ while True:
 
             """
             )
-        if user_input3A=="1":
-            print("\n")
-            Print_All_Data_Only_Genre_Sandbox()
+            if user_input3A=="1":
+                print("\n")
+                Print_All_Data_Only_Genre_Sandbox()
+            
+            elif user_input3A=="2":
+                print("\n")
+                Print_All_Data_Only_Genre_Battle_Royale()
+            elif user_input3A=="3":
+                print("\n")
+                Print_All_Data_Only_Genre_MOBA()
+            
+            elif user_input3A=="4":
+                print("\n")
+                Print_All_Data_Only_Genre_FPS()
+            
+            elif user_input3A=="5":
+                print("\n")
+                Print_All_Data_Only_Genre_Sports()
+            
+            elif user_input3A=="6":
+                print("\n")
+                Print_All_Data_Only_Genre_Fighting()
+            
+            elif user_input3A=="7":
+                print("\n")
+                Print_All_Data_Only_Genre_RPG()
+            
+            elif user_input3A=="8":
+                print("\n")
+                Print_All_Data_Only_Genre_Social_Simulation()
+            
+            elif user_input3A=="9":
+                print("\n")
+                Print_All_Data_Only_Genre_Action_Adventure()
+            
+            elif user_input3A=="10":
+                print("\n")
+                Print_All_Data_Only_Genre_Party_game()
+            
+            elif user_input3A=="11":
+                print("\n")
+                continue
+            
+            elif user_input3A=="12":
+                print("Ok, See You Next Time.")
+                break
+
+            else:
+                print("This is not an option, please try again.\n")
+                continue
         
         elif user_input3=="2":
-        
-        elif user_input3=="3":
-        
-        elif user_input3=="4":
-        
+            user_input3B= input(
+        '''
+        Which Maker Would You Like To See?
+        Enter '1' To Find Game/s Made By 'Mojang Studios' In This Database
+        Enter '2' To Find Game/s Made By 'Riot Games' In This Database
+        Enter '3' To Find Game/s Made By 'Psyonix' In This Database
+        Enter '4' To Find Game/s Made By 'Supercell' In This Database
+        Enter '5' To Find Game/s Made By 'Bandai Namco Studios' In This Database
+        Enter '6' To Find Game/s Made By 'Valve Corporation' In This Database
+        Enter '7' To Find Game/s Made By 'Nintendo EPD' In This Database
+        Enter '8' To Find Game/s Made By 'miHoYo' In This Database
+        Enter '9' To Find Game/s Made By 'FromSoftware' In This Database
+        Enter '10' To Find Game/s Made By 'The Sims Studio' In This Database
+        Enter '11' To Find Game/s Made By 'Rockstar Games' In This Database
+        Enter '12' To Find Game/s Made By 'Blizzard Entertainment' In This Database
+        Enter '13' To Find Game/s Made By 'Respawn Entertainment' In This Database
+        Enter '14' To Find Game/s Made By 'CD PROJEKT RED' In This Database
+        Enter '15' To Find Game/s Made By 'InnerSlothLLC' In This Database
+        Enter '16' To Find Game/s Made By 'Epic Games' In This Database
+        Enter '17' To Exit This Page
+        Enter '18' To Exit This Program
+
+        ''')
+            if user_input3B=="1":
+                print("\n")
+                Print_All_Data_Only_Maker_Mojang_Studios()
+
         elif user_input3=="5":
             continue
         
@@ -221,8 +427,8 @@ while True:
             break
         
         else:
-             print("This is not an option, please try again.\n")
-             continue
+            print("This is not an option, please try again.\n")
+            continue
 
     elif user_input=="4":
         user_input4= input(
