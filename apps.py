@@ -397,6 +397,130 @@ def Print_All_Data_Only_Maker_Epic_Games():
         print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
     db.close
 
+#Function to pick the specific year
+def Print_All_Data_Only_Year_2009():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2009';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2011():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2011';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2013():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2013';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2014():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2014';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2015():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2015';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2017():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2017';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2018():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2018';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2019():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2019';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2020():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2020';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2022():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2022';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_Year_2023():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.release_year='2023';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+
+
 #Main code
 
 while True:
@@ -636,7 +760,30 @@ while True:
                 print("This is not an option, please try again.\n")
                 continue
 
-        
+        elif user_input3=="3":
+            user_input3C= input(
+            '''
+            Which Year Would You Like To See?
+            Enter '1' To Find All The Game/s Released In 2009
+            Enter '2' To Find All The Game/s Released In 2011
+            Enter '3' To Find All The Game/s Released In 2013
+            Enter '4' To Find All The Game/s Released In 2014
+            Enter '5' To Find All The Game/s Released In 2015
+            Enter '6' To Find All The Game/s Released In 2017
+            Enter '7' To Find All The Game/s Released In 2018
+            Enter '8' To Find All The Game/s Released In 2019
+            Enter '9' To Find All The Game/s Released In 2020
+            Enter '10' To Find All The Game/s Released In 2022
+            Enter '11' To Find All The Game/s Released In 2023
+            Enter '12' To Exit This Page
+            Enter '13' To Exit This Program
+
+    	    '''
+            )
+            if user_input3C=="1":
+                print("\n")
+                Print_All_Data_Only_Year_2009()
+
 
         elif user_input3=="5":
             continue
