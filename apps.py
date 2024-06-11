@@ -783,6 +783,58 @@ while True:
             if user_input3C=="1":
                 print("\n")
                 Print_All_Data_Only_Year_2009()
+            
+            elif user_input3C=="2":
+                print("\n")
+                Print_All_Data_Only_Year_2011()
+            
+            elif user_input3C=="3":
+                print("\n")
+                Print_All_Data_Only_Year_2013()
+            
+            elif user_input3C=="4":
+                print("\n")
+                Print_All_Data_Only_Year_2014()
+            
+            elif user_input3C=="5":
+                print("\n")
+                Print_All_Data_Only_Year_2015()
+            
+            elif user_input3C=="6":
+                print("\n")
+                Print_All_Data_Only_Year_2017()
+            
+            elif user_input3C=="7":
+                print("\n")
+                Print_All_Data_Only_Year_2018()
+            
+            elif user_input3C=="8":
+                print("\n")
+                Print_All_Data_Only_Year_2019()
+            
+            elif user_input3C=="9":
+                print("\n")
+                Print_All_Data_Only_Year_2020()
+            
+            elif user_input3C=="10":
+                print("\n")
+                Print_All_Data_Only_Year_2022()
+            
+            elif user_input3C=="11":
+                print("\n")
+                Print_All_Data_Only_Year_2023()
+            
+            elif user_input3C=="12":
+                continue
+
+            elif user_input3C=="13":
+                print("Ok, See You Next Time.")
+                break
+            
+            else:
+                print("This is not an option, please try again.\n")
+                continue
+
 
 
         elif user_input3=="5":
