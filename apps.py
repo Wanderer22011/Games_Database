@@ -519,7 +519,50 @@ def Print_All_Data_Only_Year_2023():
         print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
     db.close
 
+#Functions to pick the specific IGN rating
+def Print_All_Data_Only_IGN_Rating_7():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.IGN_rating='7';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
 
+def Print_All_Data_Only_IGN_Rating_8():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.IGN_rating='8';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_IGN_Rating_9():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.IGN_rating='9';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
+
+def Print_All_Data_Only_IGN_Rating_10():
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.IGN_rating='10';"
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print("Game_Name                                         Genre                                   Maker                    IGN_Rating           Year_Released\n")
+    for final in results:
+        print(f"{final[0]:<50}{final[1]:<40}{final[2]:<30}{final[3]:<20}{final[4]}")
+    db.close
 
 #Main code
 
@@ -835,6 +878,44 @@ while True:
                 print("This is not an option, please try again.\n")
                 continue
 
+        elif user_input3=="4":
+            user_input3D= input(
+        '''
+        Which IGN Rating Would You Like To See?
+        Enter '1' To Find All The Games With IGN Rating Of '7'
+        Enter '2' To Find All The Games With IGN Rating Of '8'
+        Enter '3' To Find All The Games With IGN Rating Of '9'
+        Enter '4' To Find All The Games With IGN Rating Of '10'
+        Enter '5' To Exit This Page
+        Enter '6' To Exit This Program
+        '''
+        )
+            if user_input3D=='1':
+                print("\n")
+                Print_All_Data_Only_IGN_Rating_7()
+            
+            elif user_input3D=='2':
+                print("\n")
+                Print_All_Data_Only_IGN_Rating_8()
+            
+            elif user_input3D=='3':
+                print("\n")
+                Print_All_Data_Only_IGN_Rating_9()
+            
+            elif user_input3D=='4':
+                print("\n")
+                Print_All_Data_Only_IGN_Rating_10()
+            
+            elif user_input3D=="5":
+                continue
+
+            elif user_input3D=="6":
+                print("Ok, See You Next Time.")
+                break
+
+            else:
+                print("This is not an option, please try again.\n")
+                continue
 
 
         elif user_input3=="5":
