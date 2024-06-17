@@ -523,7 +523,7 @@ def Print_All_Data_Only_Year_2023():
     db.close
 
 #Functions to pick the specific IGN rating
-def Print_All_Data_Only_IGN_Rating(name):
+def Print_All_Data_Only_IGN_Rating( name ):
     db=sqlite3.connect(DATABASE)
     cursor=db.cursor()
     sql="SELECT Games.game_name, Genres.genre_name, Makers.maker_name, Games.IGN_rating, Games.release_year FROM Games JOIN Genres ON Genres.genre_id = Games.genre_id JOIN Makers ON Makers.maker_id=Games.maker_id WHERE Games.IGN_rating="+name+";"
@@ -850,22 +850,26 @@ Enter '13' To Exit This Program
                 continue
 
         elif user_input3=="4":
-            user_input3D= input(
+            try:
+                user_input3D= int(input(
 '''
 Which IGN Rating Would You Like To See?
 Type the number you wanted to check from 1-10:
 
 '''
-    )
-            if user_input3D >="7":
-                if user_input3D <="10":
-                    Print_All_Data_Only_IGN_Rating(user_input3D)
-                
+    ))
+                if user_input3D >=7:
+                    if user_input3D <=10:
+                        finalnum=str(user_input3D)
+                        Print_All_Data_Only_IGN_Rating(finalnum)
+                    
+                    else:
+                        print("No data found for the number:", user_input3D)
                 else:
                     print("No data found for the number:", user_input3D)
-            else:
-                print("No data found for the number:", user_input3D)
-
+            except:
+                print("This Is Not A Number, Please Try Again.")
+                continue
 
         elif user_input3=="5":
             continue
