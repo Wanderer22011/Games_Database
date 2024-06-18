@@ -8,7 +8,6 @@ import sqlite3
 
 # Variable Declarations:
 DATABASE="Game_Database.db"
-conn = None
 
 #Functions To Look At All The Games
 def Print_All_Games():
@@ -450,13 +449,15 @@ Enter '5' To Exit This Program
     elif user_input=="2":
         user_input2=input(
 """
-Which Information would u like to see?
-Enter '1' To See All of The Information 
-Enter '2' To See All of The Maker Information
-Enter '3' To See All of The Genre Information
+
+Which Information Would You Like To See?
+Enter '1' To See All Of The Information 
+Enter '2' To See All Of The Maker Information
+Enter '3' To See All Of The Genre Information
 Enter '4' To Exit This Page
 Enter '5' To Exit This Program
-            """)
+
+""")
         if user_input2=="1":
             Print_All_Data()
             print("\n")
@@ -479,7 +480,7 @@ Enter '5' To Exit This Program
         
         else:
             print("\n")
-            print("This is not an option, Please choose again.")
+            print("This Is Not An option, Please Choose Again\n")
             continue
     
     elif user_input=="3":
@@ -492,6 +493,7 @@ Enter '3' To Find All The Games With The Specific Release Year
 Enter '4' To Find All The Games With The Specific IGN Rating
 Enter '5' To Exit This Page
 Enter '6' To Exit This Program
+
 '''
         )
         if user_input3=="1":
@@ -561,7 +563,7 @@ Enter '12' To Exit This Program
                 break
 
             else:
-                print("This is not an option, please try again.\n")
+                print("This Is Not An Option, Please Try Again\n")
                 continue
         
         elif user_input3=="2":
@@ -662,7 +664,7 @@ Enter '18' To Exit This Program
                 break
 
             else:
-                print("This is not an option, please try again.\n")
+                print("This Is Not An Option, Please Try Again\n")
                 continue
 
         elif user_input3=="3":
@@ -672,7 +674,7 @@ Enter '18' To Exit This Program
 Which Year Would You Like To See?
 
 Tip:
-Suggested search for years between 2009 - 2023
+Enter The Years Between 2009 - 2023 To Find Data
 
 
 '''
@@ -683,11 +685,11 @@ Suggested search for years between 2009 - 2023
                         Print_All_Data_Only_Year_From_Input(finalYear)
                     
                     else:
-                        print("No data found for the year:", user_input3C)
+                        print("No Data Found For The Year:", user_input3C)
                 else:
-                        print("No data found for the year:", user_input3C)
+                        print("No Data Found For The Year:", user_input3C)
             except:
-                print("This Is Not A Number, Please Try Again.")
+                print("This Is Not A Number, Please Try Again")
                 continue
             
 
@@ -696,7 +698,7 @@ Suggested search for years between 2009 - 2023
                 user_input3D= int(input(
 '''
 Which IGN Rating Would You Like To See?
-Enter The Number You Wanted To See:
+Enter The Rating You Wanted To See:
 
 
 '''
@@ -707,11 +709,11 @@ Enter The Number You Wanted To See:
                         Print_All_Data_Only_IGN_Rating_From_Input(finalnum)
                     
                     else:
-                        print("No data found for the number:", user_input3D)
+                        print("No Data Found For The Number:", user_input3D)
                 else:
-                    print("No data found for the number:", user_input3D)
+                    print("No Data Found For The Number:", user_input3D)
             except:
-                print("This Is Not A Number, Please Try Again.")
+                print("This Is Not A Number, Please Try Again")
                 continue
 
         elif user_input3=="5":
@@ -722,7 +724,7 @@ Enter The Number You Wanted To See:
             break
         
         else:
-            print("This is not an option, please try again.\n")
+            print("This Is Not An Option, Please Try Again\n")
             continue
 
     elif user_input=="4":
@@ -760,7 +762,7 @@ Enter '7' To Exit This Program
             print("Ok, See You Next Time.")
             break
         else:
-            print("This is not an option, please try again.\n")
+            print("This Is Not An Option, Please Try Again\n")
             continue
 
         
@@ -769,6 +771,5 @@ Enter '7' To Exit This Program
         break
         
     else:
-            print("This is not an option, please try again.\n")
+            print("This Is Not An Option, Please Try Again\n")
             continue
-    
